@@ -24,28 +24,6 @@ def trim(f):
     return f_list
 
 
-# POLYNOMIAL ADDITION FUNCTION
-def poly_add(a, b, p=None):
-    # Initialize the result list with zeros
-    # NOTE: Length equal to the maximum of coefficient amounts
-    res = [0] * max(len(a), len(b))
-    
-    # Iterate over the coefficients of the first polynomial and add them to the result
-    for i in range(len(a)):
-        res[i] += a[i]
-    
-    # Iterate over the coefficients of the second polynomial and add them to the result
-    for i in range(len(b)):
-        res[i] += b[i]
-    
-    # If a modulus p is provided, reduce the coefficients modulo p
-    if p is not None:
-        res = [c % p for c in res]
-    
-    # Return the trimmed result to remove any trailing zeros
-    return trim(res)
-
-
 # POLYNOMIAL SUBTRACTION FUNCTION
 def poly_sub(a, b, p=None):
     # Initialize the result list with zeros
